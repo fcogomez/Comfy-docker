@@ -61,7 +61,6 @@ RUN wget https://github.com/mikefarah/yq/releases/download/v4.35.2/yq_linux_amd6
 COPY ./extra_model_paths.yml /extra_model_paths.yml
 COPY ./extra_downloads.yml /extra_downloads.yml
 
-RUN ["chmod", "+x", "./run_comfy"]
 COPY ./run_comfy /bin/run_comfy
 COPY ./.env /root/.env
 

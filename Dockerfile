@@ -66,6 +66,6 @@ COPY ./.env /root/.env
 
 RUN mv /opt/conda/bin/ffmpeg /opt/conda/bin/ffmpeg-ancient
 RUN ln -s /usr/bin/ffmpeg /opt/conda/bin/ffmpeg
-WORKDIR /worskpace/ComfyUI
+WORKDIR /workspace/ComfyUI
 
 CMD ["/bin/run_comfy"]

@@ -58,8 +58,8 @@ ENTRYPOINT ["/tini", "--"]
 
 RUN wget https://github.com/mikefarah/yq/releases/download/v4.35.2/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
 
-COPY ./extra_model_paths.yml /storage/extra_model_paths.yml
-COPY ./extra_downloads.yml /storage/extra_downloads.yml
+COPY ./extra_model_paths.yml /extra_model_paths.yml
+COPY ./extra_downloads.yml /extra_downloads.yml
 
 COPY ./run_comfy /bin/run_comfy
 COPY ./.env /root/.env

@@ -12,9 +12,9 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesourc
 RUN apt update 
 RUN apt install -y nodejs 
 
-RUN cd /root && npm install request chokidar form-data ws glob express axios dotenv bull
+RUN cd /root && npm install request chokidar ws glob dotenv
 
-RUN pip install gradio opencv-python kornia loguru scikit-image onnx onnxruntime-gpu lpips ultralytics python_bidi arabic_reshaper 
+RUN pip install opencv-python kornia loguru scikit-image onnx onnxruntime-gpu lpips ultralytics python_bidi arabic_reshaper 
 RUN pip install torchvision gitpython timm addict yapf insightface numba
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -58,8 +58,8 @@ ENTRYPOINT ["/tini", "--"]
 
 RUN wget https://github.com/mikefarah/yq/releases/download/v4.35.2/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
 
-COPY ./extra_model_paths.yml /extra_model_paths.yml
-COPY ./extra_downloads.yml /extra_downloads.yml
+COPY ./extra_model_paths.yml /storage/extra_model_paths.yml
+COPY ./extra_downloads.yml /storage/extra_downloads.yml
 
 COPY ./run_comfy /bin/run_comfy
 COPY ./.env /root/.env

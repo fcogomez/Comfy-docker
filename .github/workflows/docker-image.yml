@@ -2,16 +2,8 @@ name: Publish Docker image
 
 on:
   push:
-    branches:
-      - 'main'
-    paths:
-      - '.github/workflows/**'
-      - 'Dockerfile'
-      - '.zshrc'
-      - 'extra_downloads.yml'
-      - 'extra_model_paths.yml'
-      - 'run_comfy'
-    tags: 'v*'
+    tags:
+      - "v*.*.*"
   pull_request:
     branches:
       - 'main'
@@ -22,8 +14,9 @@ on:
       - 'extra_downloads.yml'
       - 'extra_model_paths.yml'
       - 'run_comfy'
-    tags: 'v*'
-
+    tags:
+      - "v*.*.*"
+      
   workflow_dispatch:
   
 jobs:

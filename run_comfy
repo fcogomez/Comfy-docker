@@ -14,6 +14,13 @@ toilet ComfyUI -w 90 -f pagga -F border:
 mkdir -p /storage/shared_models/
 chmod -R 777 /storage/shared_models
 
+yaml="/storage/shared_models/extra_model_paths.yml"
+
+if [ ! -e $yaml ]; then
+  fun_echo "Sample extra_model_paths.yml has been placed in the shared_models dir."
+  cp /extra_model_paths.yml /storage/shared_models/extra_model_paths.yml
+fi
+
 yaml="/storage/shared_models/extra_downloads.yml"
 
 if [ ! -e $yaml ]; then

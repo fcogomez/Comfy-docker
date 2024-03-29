@@ -14,8 +14,6 @@ toilet ComfyUI -w 90 -f pagga -F border:
 mkdir -p /storage/shared_models/
 chmod -R 777 /storage/shared_models
 
-chmod -R 777 /workspace/models
-
 yaml="/storage/shared_models/extra_downloads.yml"
 
 if [ ! -e $yaml ]; then

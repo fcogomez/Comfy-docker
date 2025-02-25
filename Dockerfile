@@ -35,7 +35,7 @@ RUN git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git && cd ComfyUI
 RUN git clone https://github.com/ltdrdata/ComfyUI-Impact-Pack.git && cd ComfyUI-Impact-Pack && ( pip install -r requirements.txt || true ) 
 RUN git clone https://github.com/cubiq/ComfyUI_IPAdapter_plus.git && cd ComfyUI_IPAdapter_plus && ( pip install -r requirements.txt || true )
 RUN git clone https://github.com/storyicon/comfyui_segment_anything.git && cd comfyui_segment_anything && ( pip install -r requirements.txt || true )
-RUN git clone https://github.com/Gourieff/comfyui-reactor-node.git && cd comfyui-reactor-node && ( pip install -r requirements.txt || true )
+#RUN git clone https://github.com/Gourieff/comfyui-reactor-node.git && cd comfyui-reactor-node && ( pip install -r requirements.txt || true )
 RUN git clone https://github.com/WASasquatch/was-node-suite-comfyui.git && cd was-node-suite-comfyui && ( pip install -r requirements.txt || true )
 RUN git clone https://github.com/pythongosssss/ComfyUI-Custom-Scripts.git && cd ComfyUI-Custom-Scripts && ( pip install -r requirements.txt || true )
 RUN git clone https://github.com/RockOfFire/ComfyUI_Comfyroll_CustomNodes.git && cd ComfyUI_Comfyroll_CustomNodes && ( pip install -r requirements.txt || true )

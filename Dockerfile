@@ -64,7 +64,7 @@ COPY ./extra_downloads.yml /extra_downloads.yml
 COPY ./run_comfy /bin/run_comfy
 COPY ./.env /root/.env
 
-RUN mv /opt/conda/bin/ffmpeg /opt/conda/bin/ffmpeg-ancient
+#RUN mv /opt/conda/bin/ffmpeg /opt/conda/bin/ffmpeg-ancient
 RUN ln -s /usr/bin/ffmpeg /opt/conda/bin/ffmpeg
 WORKDIR /workspace/ComfyUI
 

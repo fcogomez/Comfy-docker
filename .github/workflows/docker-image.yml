@@ -71,6 +71,8 @@ jobs:
         sudo rm -rf "/usr/local/share/boost"
         sudo rm -rf "$AGENT_TOOLSDIRECTORY"
         df -h
+        sudo ncdu /
+
 
     - name: Build and push Docker image
       id: docker_build

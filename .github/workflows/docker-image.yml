@@ -70,8 +70,8 @@ jobs:
         sudo rm -rf /opt/ghc
         sudo rm -rf "/usr/local/share/boost"
         sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+        sudo rm -rf /workspaces/.codespaces/shared/editors/jetbrains
         df -h
-        sudo ncdu /
 
 
     - name: Build and push Docker image

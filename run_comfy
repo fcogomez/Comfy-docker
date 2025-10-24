@@ -71,4 +71,4 @@ yq e '.custom_nodes[]' $yaml | while read -r repo; do
 done
 
 fun_echo "Starting ComfyUI..."
-cd /workspace/ComfyUI && python main.py --listen 0.0.0.0 --extra-model-paths-config /storage/shared_models/extra_model_paths.yml --disable-xformers
+cd /workspace/ComfyUI && python main.py --listen 0.0.0.0 --extra-model-paths-config /storage/shared_models/extra_model_paths.yml --disable-xformers --use-sage-attention

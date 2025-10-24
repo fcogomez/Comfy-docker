@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.7.1-cuda12.8-cudnn9-runtime
+FROM pytorch/pytorch:2.9.0-cuda13.0-cudnn9-runtim
 
 RUN apt update -y
 RUN DEBIAN_FRONTEND=noninteractive TZ=America/Chicago apt install -y sudo build-essential iproute2 wget ncurses-bin figlet toilet vim nano tig curl git htop zsh ffmpeg tmux jq ca-certificates gnupg
@@ -21,14 +21,16 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 COPY ./.zshrc /root/.zshrc
 
 WORKDIR  /workspace/
-
 RUN git clone https://github.com/comfyanonymous/ComfyUI.git /workspace/ComfyUI
-RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git /workspace/ComfyUI/custom_nodes/ComfyUI-Manager
-
-
-WORKDIR /workspace
 RUN cd /workspace/ComfyUI && pip install -r requirements.txt
+
+RUN git clone https://github.com/ltdrdata/ComfyUI-Manager.git /workspace/ComfyUI/custom_nodes/ComfyUI-Manager
+WORKDIR /workspace
 RUN cd /workspace/ComfyUI/custom_nodes/ComfyUI-Manager && pip install -r requirements.txt
+
+RUN git clone https://github.com/thu-ml/SageAttention.git /workspace/ComfyUI/SageAttention
+WORKDIR /workspace
+RUN cd /workspace/ComfyUI/SageAttention && export EXT_PARALLEL=4 NVCC_APPEND_FLAGS="--threads 8" MAX_JOBS=32 && python setup.py install  # or pip install -e .
 
 WORKDIR /workspace/ComfyUI/custom_nodes
 RUN git clone https://github.com/ltdrdata/ComfyUI-Inspire-Pack.git && cd ComfyUI-Inspire-Pack && ( pip install -r requirements.txt || true )

@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.9.0-cuda13.0-cudnn9-runtim
+FROM pytorch/pytorch:2.9.0-cuda13.0-cudnn9-runtime
 
 RUN apt update -y
 RUN DEBIAN_FRONTEND=noninteractive TZ=America/Chicago apt install -y sudo build-essential iproute2 wget ncurses-bin figlet toilet vim nano tig curl git htop zsh ffmpeg tmux jq ca-certificates gnupg
